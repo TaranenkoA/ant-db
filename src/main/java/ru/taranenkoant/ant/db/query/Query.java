@@ -1,8 +1,10 @@
 package ru.taranenkoant.ant.db.query;
 
 import java.io.Closeable;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Map;
 
 /**
  * {@code @author:} TaranenkoAnt
@@ -10,5 +12,5 @@ import java.sql.SQLException;
  */
 public interface Query extends Closeable {
 
-    ResultSet execute() throws SQLException;
+    ResultSet execute(Connection connection, String queryStr, Map<String, Object> parameterValues) throws SQLException;
 }
